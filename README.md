@@ -1,100 +1,77 @@
-# Sistema de Reconhecimento Facial
+<!--
+  TEMPLATE: Academic Work
+  Use para: trabalhos de graduação (ESTACIO), atividades extensionistas
+-->
 
-Este projeto implementa um sistema de reconhecimento facial em tempo real usando a biblioteca DeepFace e OpenCV. O sistema captura vídeo de uma webcam, detecta rostos e os identifica usando modelos pré-treinados.
+# Sistema de Reconhecimento Facial em Tempo Real
 
-## Estrutura do Projeto
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green?logo=opencv)
+![DeepFace](https://img.shields.io/badge/DeepFace-0.0.79-orange)
+![Estácio](https://img.shields.io/badge/Universidade-Estácio_de_Sá-9cf)
+![4º Semestre](https://img.shields.io/badge/Semestre-4%C2%BA-lightgrey)
 
-```
-__pycache__/
-.gitignore
-data/
-    ds_model_facenet512_detector_opencv_aligned_normalization_base_expand_0.pkl
-    README.md
-detect.py
-log_reconhecimento_facial.txt
-README.md
-requirements.txt
-```
+> Sistema de reconhecimento facial em tempo real desenvolvido como projeto prático da disciplina **Big Data em Python** do 4º semestre de **Análise e Desenvolvimento de Sistemas** da Universidade Estácio de Sá. Utiliza DeepFace para identificação facial e OpenCV para captura e processamento de vídeo via webcam.
 
-- `data/`: Contém o modelo pré-treinado e um arquivo README.
-- `detect.py`: Script principal para executar o sistema de reconhecimento facial.
-- `log_reconhecimento_facial.txt`: Arquivo de log para registrar eventos e erros do sistema.
-- `requirements.txt`: Lista de dependências Python necessárias para o projeto.
+---
 
-## Instalação
+## 🎯 Contexto Acadêmico
 
-1. Clone o repositório.
-2. Instale os pacotes Python necessários usando pip:
+| Item | Detalhe |
+|------|---------|
+| **Instituição** | Universidade Estácio de Sá |
+| **Curso** | Análise e Desenvolvimento de Sistemas |
+| **Disciplina** | Big Data em Python |
+| **Semestre** | 4º semestre |
+| **Ano** | 2024 |
 
-    ```sh
-    pip install -r requirements.txt
-    ```
+---
 
-## Uso
+## 📋 Objetivo
 
-Execute o script `detect.py` para iniciar o sistema de reconhecimento facial:
+Implementar um sistema de reconhecimento facial em tempo real que capture vídeo da webcam, detecte rostos presentes no quadro e os identifique comparando com uma base de dados de imagens pré-cadastradas, utilizando modelos de deep learning da biblioteca DeepFace. O projeto aplica conceitos de visão computacional, aprendizado de máquina e processamento de dados em tempo real com Python.
 
-```sh
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Python 3.11** — Linguagem principal do projeto
+- **DeepFace** — Biblioteca de reconhecimento facial baseada em deep learning (modelo VGG-Face)
+- **OpenCV** — Captura, processamento e exibição de vídeo em tempo real
+- **Logging** — Sistema de registro de logs para depuração e auditoria
+
+---
+
+## ⚙️ Como Executar
+
+```bash
+# Clone
+git clone https://github.com/silviorodrigues98/big_data_graduacao_ESTACIO.git
+cd big_data_graduacao_ESTACIO
+
+# Instale dependências
+pip install -r requirements.txt
+
+# Execute
 python detect.py
 ```
 
-## Visão Geral do Código
+---
 
-### `detect.py`
+## 📚 Conceitos Aplicados
 
-Este script contém a lógica principal do sistema de reconhecimento facial.
+- **Visão Computacional** — Captura e processamento de frames de vídeo com OpenCV
+- **Deep Learning para Reconhecimento Facial** — Utilização do modelo VGG-Face via DeepFace para identificação de rostos em tempo real
+- **Processamento de Dados em Tempo Real** — Pipeline de captura, detecção, identificação e exibição contínua de vídeo
+- **Sistema de Logs** — Registro estruturado de eventos, erros e avisos para monitoramento do sistema
+- **Detecção e Desenho de Regiões de Interesse** — Identificação de rostos e renderização de bounding boxes com nomes
 
-#### Importações
+---
 
-```python
-from deepface import DeepFace
-import cv2
-import logging
-```
+<p align="center">
+  Projeto acadêmico desenvolvido para a disciplina de Big Data em Python — 4º semestre de Análise e Desenvolvimento de Sistemas
+</p>
 
-#### Configuração de Log
-
-```python
-def configurar_log():
-    logging.basicConfig(filename='log_reconhecimento_facial.txt', level=logging.INFO, 
-                        format='%(asctime)s - %(levelname)s - %(message)s')
-```
-
-#### Função de Log
-
-```python
-def registrar_log(mensagem, nivel='info'):
-    if nivel == 'info':
-        logging.info(mensagem)
-    elif nivel == 'erro':
-        logging.error(mensagem)
-    elif nivel == 'aviso':
-        logging.warning(mensagem)
-```
-
-#### Modelos e Métricas Disponíveis
-
-```python
-backends = ["opencv", "ssd", "dlib", "mtcnn", "retinaface"]
-modelos = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib", "SFace"]
-metricas = ["cosine", "euclidean", "euclidean_l2"]
-```
-
-#### Função de Reconhecimento Facial em Tempo Real
-
-```python
-def reconhecimento_facial_tempo_real():
-    # ... (código da função)
-```
-
-#### Execução Principal
-
-```python
-configurar_log()
-registrar_log("Sistema de reconhecimento facial iniciado.")
-reconhecimento_facial_tempo_real()
-```
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT.
+<p align="center">
+  <a href="https://github.com/silviorodrigues98">@silviorodrigues98</a>
+</p>
